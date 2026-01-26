@@ -1,0 +1,138 @@
+nav.header {
+    background: linear-gradient(120deg, #f2ece5 0%, #fcf1e6 100%);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe icons', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 15px;
+    max-width: calc(100% - 20px);
+    margin: 10px;
+}
+
+#admin-page nav.header {
+    margin: 0 0 20px;
+    position: relative;
+}
+
+.header .nav-links {
+    margin-left: auto;
+}
+
+.nav-links li {
+    display: inline;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.header .nav-links li {
+    display: inline;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+}
+
+.nav-links .active {
+    font-weight: 900;
+    background-color: rgba(210, 105, 30, 0.423);
+    border-radius: 10px;
+}
+
+.nav-links li:last-child {
+    border-right: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #ff7b00;
+}
+
+.nav-links a.active {
+    font-weight: 900;
+    border-bottom: 2px solid #b45700;
+}
+
+nav .logo {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.407);
+}
+
+.nav-links .icon {
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 5px;
+
+}
+
+.site-name {
+    justify-self: start;
+}
+
+#admin-page-nav .site-name {
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    border-bottom: #2d3748 1px solid;
+}
+
+@media (max-width: 765px) {
+    .nav-links {
+        position: absolute;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        z-index: 10000;
+    }
+
+    .nav-links.active {
+        display: flex;
+        z-index: 10000;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 5px;
+        margin-top: 5px;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+}

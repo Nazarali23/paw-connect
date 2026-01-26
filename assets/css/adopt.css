@@ -1,0 +1,484 @@
+.search-pets-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-pets-section label {
+    text-align: left;
+}
+
+.search-pets-section-content {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    gap: 10px;
+}
+
+.search-pets-item {
+    flex: 1;
+}
+
+.search-pets-section select {
+    width: 100%;
+    height: 100%;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid #9a9a9a;
+    border-radius: 7px;
+}
+
+.search-pets-section button {
+    padding: 5px 10px;
+    background-color: #2d3748;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.search-pets-section button:hover {
+    background-color: #f0a500;
+}
+
+.filter-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 30px;
+    position: relative;
+}
+
+.filters {
+    display: none;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+    border: #2d3748 1px solid;
+}
+
+.filters.active {
+    display: flex;
+}
+
+.filter-item {
+    padding: 7px;
+    border-bottom: 1px solid #2d37483c;
+}
+
+.filter-item:hover {
+    background-color: #f0a500;
+    color: #fff;
+}
+
+.filter-menu {
+    border: #2d3748 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+    width: 60px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.filter-menu img {
+    width: 100%;
+    height: 100%
+}
+
+
+.pets-section-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 10px 30px;
+    padding: 20px 0;
+}
+
+.pet-properties p {
+    font-size: 14px;
+    color: #666;
+    padding: 0;
+    margin: 0;
+
+}
+
+.pet-card {
+    width: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.pet-card:hover {
+    transform: scale(1.05);
+}
+
+.pet-card-info {
+    padding: 10px;
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.pet-card h4 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.pet-card p {
+    display: inline-block;
+    background-color: #ddd;
+    font-size: 14px;
+    color: black;
+    padding: 3px 7px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.pagination-controls button {
+    padding: 10px 20px;
+    background-color: #2d3748;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.pagination-controls button:hover {
+    background-color: #f0a500;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#pageIndicator {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+.adoption-request-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.adoption-container {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    min-height: 550px;
+}
+
+
+.pet-image-side {
+    flex: 1;
+    position: relative;
+    background-color: #333;
+}
+
+.pet-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.pet-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px;
+    color: white;
+}
+
+.form-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-side h2 {
+    margin-top: 0;
+    color: #3f1f00;
+    margin-bottom: 10px;
+}
+
+.input-info {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.location-group {
+    display: flex;
+    gap: 10px;
+}
+
+.search-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e58e26;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-button:hover {
+    background-color: #d67d1b;
+}
+
+.cancel-link {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    text-decoration: none;
+}
+
+.request-search-form {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-input {
+    flex: 1 1 140px;
+    min-width: 120px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #e58e26;
+}
+
+.search-submit-btn {
+    flex: 0 0 auto;
+    padding: 12px 25px;
+    background: #2d3748;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.search-submit-btn:hover {
+    background: #1a202c;
+}
+
+.requests-section {
+    padding: 40px 20px;
+    min-height: 60vh;
+}
+
+.requests-section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.requests-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.request-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.request-card.adoption-card {
+    border-left-color: #e58e26;
+}
+
+.request-card.surrender-card {
+    border-left-color: #3182ce;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.req-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.req-title.adoption-text {
+    color: #e58e26;
+}
+
+.req-title.surrender-text {
+    color: #3182ce;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status.approved,
+.status.accepted {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.rejected,
+.status.declined {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.card-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.helper-text {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 0 5px 0;
+}
+
+.contact-shelter-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #666;
+    transition: opacity 0.3s;
+}
+
+.contact-shelter-btn:hover {
+    opacity: 0.9;
+}
+
+.btn-orange {
+    background-color: #e58e26;
+}
+
+.btn-blue {
+    background-color: #3182ce;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+.empty-icon {
+    width: 50px;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+.error-text {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 765px) {
+    .search-pets-section-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-menu {
+        width: 25px;
+        height: 20px;
+    }
+
+    .adoption-container {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .pet-image-side {
+        height: 250px;
+    }
+
+    .form-side {
+        padding: 30px 20px;
+    }
+}

@@ -1,0 +1,127 @@
+/* --- Surrender Form Section Tasarımı --- */
+
+.search-pets-section {
+    padding: 50px 7%;
+    max-width: 900px;
+    margin: 0 auto;
+    /* Sayfada ortalar */
+}
+
+.search-pets-section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.search-pets-section-title h2 {
+    color: #3f1f00;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.search-pets-section-title p {
+    color: #4a5568;
+    font-size: 16px;
+}
+
+/* Formun Genel Düzeni (Grid yapısı başlangıç seviyesi için idealdir) */
+.search-pets-section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* Her bir input kutusunun genişliği */
+.search-pets-item {
+    flex: 1 1 calc(50% - 20px);
+    /* Yan yana ikişerli dizilir */
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+}
+
+/* Input, Select ve Textarea stilleri */
+.input-info,
+.search-pets-item select,
+.search-pets-item textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    /* padding'in genişliği bozmasını engeller */
+}
+
+.input-info:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ff7b00;
+    /* Senin turuncu teman */
+    box-shadow: 0 0 0 3px rgba(255, 123, 0, 0.1);
+}
+
+/* Fotoğraf yükleme alanı */
+.search-pets-item label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+/* Barınak Listesi (Kaydırmalı alan) */
+#shelter-list {
+    border: 1.5px solid #cbd5e0 !important;
+    background-color: #ffffff !important;
+    line-height: 1.8;
+}
+
+#shelter-list label {
+    font-weight: 400;
+    cursor: pointer;
+    display: block;
+}
+
+/* Gönder Butonu Tasarımı */
+.search-button {
+    background-color: #ff7b00;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
+    margin-top: 10px;
+}
+
+.search-button:hover {
+    background-color: #e65100;
+    transform: translateY(-2px);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+    .search-pets-item {
+        flex: 1 1 100%;
+        /* Mobilde her satıra bir kutu */
+    }
+
+    .search-pets-section-title h2 {
+        font-size: 24px;
+    }
+}

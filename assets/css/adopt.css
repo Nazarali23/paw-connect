@@ -458,6 +458,12 @@
     font-weight: bold;
 }
 
+.no-pets-found {
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+}
+
 @media (max-width: 765px) {
     .search-pets-section-content {
         display: flex;

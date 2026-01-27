@@ -1,10 +1,7 @@
-/* --- Surrender Form Section Tasarımı --- */
-
 .search-pets-section {
     padding: 50px 7%;
     max-width: 900px;
     margin: 0 auto;
-    /* Sayfada ortalar */
 }
 
 .search-pets-section-title {
@@ -24,7 +21,6 @@
     font-size: 16px;
 }
 
-/* Formun Genel Düzeni (Grid yapısı başlangıç seviyesi için idealdir) */
 .search-pets-section-content {
     display: flex;
     flex-wrap: wrap;
@@ -36,16 +32,24 @@
     border: 1px solid #e2e8f0;
 }
 
-/* Her bir input kutusunun genişliği */
 .search-pets-item {
     flex: 1 1 calc(50% - 20px);
-    /* Yan yana ikişerli dizilir */
     display: flex;
     flex-direction: column;
     min-width: 250px;
 }
 
-/* Input, Select ve Textarea stilleri */
+#shelter-select {
+    flex-basis: 100%;
+}
+
+#shelter-placeholder {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
 .input-info,
 .search-pets-item select,
 .search-pets-item textarea {
@@ -57,7 +61,6 @@
     font-size: 14px;
     transition: all 0.3s ease;
     box-sizing: border-box;
-    /* padding'in genişliği bozmasını engeller */
 }
 
 .input-info:focus,
@@ -65,11 +68,9 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: #ff7b00;
-    /* Senin turuncu teman */
     box-shadow: 0 0 0 3px rgba(255, 123, 0, 0.1);
 }
 
-/* Fotoğraf yükleme alanı */
 .search-pets-item label {
     font-size: 14px;
     font-weight: 600;
@@ -77,11 +78,19 @@ textarea:focus {
     color: #2d3748;
 }
 
-/* Barınak Listesi (Kaydırmalı alan) */
 #shelter-list {
     border: 1.5px solid #cbd5e0 !important;
     background-color: #ffffff !important;
     line-height: 1.8;
+}
+
+.shelters {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    border-radius: 5px;
 }
 
 #shelter-list label {
@@ -90,7 +99,6 @@ textarea:focus {
     display: block;
 }
 
-/* Gönder Butonu Tasarımı */
 .search-button {
     background-color: #ff7b00;
     color: white;
@@ -114,11 +122,9 @@ textarea:focus {
     transform: translateY(0);
 }
 
-/* Mobil Uyumluluk */
 @media (max-width: 600px) {
     .search-pets-item {
         flex: 1 1 100%;
-        /* Mobilde her satıra bir kutu */
     }
 
     .search-pets-section-title h2 {

@@ -177,17 +177,23 @@ $profilePic = !empty($myShelter["profile_picture"]) ? "../" . $myShelter["profil
                 <div id="req-adoption" class="request-tab-content active">
                     <div class="requests-grid">
                         <?php
-                        $reqsA = $conn->query("SELECT ar.*, p.name as pname FROM adoption_requests ar JOIN pets p ON ar.pet_id=p.id WHERE ar.shelter_id=$shelter_id AND ar.status='pending' ORDER BY ar.request_date DESC");
+                        $reqsA = $conn->query("SELECT ar.*, p.name as pname, p.main_image FROM adoption_requests ar JOIN pets p ON ar.pet_id=p.id WHERE ar.shelter_id=$shelter_id AND ar.status='pending' ORDER BY ar.request_date DESC");
                         if ($reqsA->num_rows > 0) {
                             while ($r = $reqsA->fetch_assoc()) {
+                                $imgSrc = "../" . $r['main_image'];
                                 echo '<div class="request-card glass-panel border-orange">
                                     <div class="req-header"><span class="req-id">#' . $r["ref_code"] . '</span></div>
                                     <div class="req-body">
-                                        <h4>' . $r["applicant_name"] . '</h4>
-                                        <p>Wants: <b>' . $r["pname"] . '</b></p>
-                                        <p>From: ' . $r["applicant_city"] . ', ' . $r["applicant_country"] . '</p>
-                                        <p>Phone: ' . $r["applicant_phone"] . '</p>
-                                        <p><i>"' . $r["message"] . '"</i></p>
+                                        <div class="req-pet-info">
+                                            <img src="' . $imgSrc . '">
+                                            <div class="req-pet-text">
+                                                <h4>' . htmlspecialchars($r["applicant_name"]) . '</h4>
+                                                <p>Wants: <b>' . htmlspecialchars($r["pname"]) . '</b></p>
+                                            </div>
+                                        </div>
+                                        <p>From: ' . htmlspecialchars($r["applicant_city"]) . ', ' . htmlspecialchars($r["applicant_country"]) . '</p>
+                                        <p>Phone: ' . htmlspecialchars($r["applicant_phone"]) . '</p>
+                                        <p><i>"' . htmlspecialchars($r["message"]) . '"</i></p>
                                         <span class="badge pending">Pending</span>
                                     </div>
                                     <div class="req-actions">
@@ -256,8 +262,8 @@ $profilePic = !empty($myShelter["profile_picture"]) ? "../" . $myShelter["profil
                             while ($h = $histA->fetch_assoc()) {
                                 $statusClass = ($h['status'] == 'approved') ? 'border-green' : 'border-red';
                                 $statusBadge = ($h['status'] == 'approved')
-                                    ? '<span class="badge" style="background:#28a745">Approved</span>'
-                                    : '<span class="badge" style="background:#dc3545">Rejected</span>';
+                                    ? '<span class="badge">Approved</span>'
+                                    : '<span class="badge">Rejected</span>';
 
                                 echo '<div class="request-card glass-panel ' . $statusClass . '">
                                     <div class="req-header">
@@ -288,8 +294,8 @@ $profilePic = !empty($myShelter["profile_picture"]) ? "../" . $myShelter["profil
                             while ($hs = $histS->fetch_assoc()) {
                                 $statusClass = ($hs['status'] == 'accepted') ? 'border-green' : 'border-red';
                                 $statusBadge = ($hs['status'] == 'accepted')
-                                    ? '<span class="badge" style="background:#28a745">Accepted</span>'
-                                    : '<span class="badge" style="background:#dc3545">Declined</span>';
+                                    ? '<span class="badge">Accepted</span>'
+                                    : '<span class="badge">Declined</span>';
                                 $imgSrc = "../" . $hs['pet_photo'];
 
                                 echo '<div class="request-card glass-panel ' . $statusClass . '">
@@ -299,7 +305,7 @@ $profilePic = !empty($myShelter["profile_picture"]) ? "../" . $myShelter["profil
                                     </div>
                                     <div class="req-body">
                                         <div class="req-pet-info">
-                                            <img src="' . $imgSrc . '" style="filter:grayscale(80%); opacity:0.7;">
+                                            <img src="' . $imgSrc . '">
                                             <div class="req-pet-text">
                                                 <h4>' . htmlspecialchars($hs["owner_name"]) . '</h4>
                                                 <p>Pet: <b>' . htmlspecialchars($hs["pet_name"]) . '</b></p>

@@ -71,8 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="pet-image-side">
                 <img src="<?php echo htmlspecialchars($pet_image); ?>" alt="<?php echo htmlspecialchars($pet_name); ?>">
                 <div class="pet-image-overlay">
-                    <h2 style="margin:0; color:white;"><?php echo htmlspecialchars($pet_name); ?></h2>
-                    <p style="margin:5px 0 0 0; font-size:0.9em; opacity:0.9;">
+                    <h2><?php echo htmlspecialchars($pet_name); ?></h2>
+                    <p>
                         <?php echo isset($pet_details) ? $pet_details : ''; ?>
                     </p>
                 </div>
@@ -80,8 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="form-side">
                 <h2>Adoption Application</h2>
-                <p style="color:#666; margin-bottom:20px;">
-                    Apply to adopt <b style="color:#e58e26;"><?php echo htmlspecialchars($pet_name); ?></b>
+                <p>
+                    Apply to adopt <b><?php echo htmlspecialchars($pet_name); ?></b>
                 </p>
 
                 <form method="POST">
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <textarea name="message"
                         placeholder="Why do you want to adopt this pet? (Housing, experience, etc.)" required rows="4"
-                        class="input-info" style="resize:vertical;"></textarea>
+                        class="input-info"></textarea>
 
                     <button type="submit" class="search-button">Send Request</button>
                     <a href="adopt.php" class="cancel-link">Cancel</a>

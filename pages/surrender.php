@@ -80,18 +80,16 @@
                     <input type="file" name="pet_photo" accept="image/*" required>
                 </div>
 
-                <div class="search-pets-item" style="flex-basis:100%;">
+                <div class="search-pets-item" id="shelter-select">
                     <label><b>Select Shelter to Send Request:</b></label>
-                    <div id="shelter-list"
-                        style="max-height:150px; overflow-y:auto; padding:10px; border:1px solid #ccc; background:#f9f9f9; border-radius:5px;">
-                        <p id="shelter-placeholder"
-                            style="color:#666; font-style:italic; text-align:center; padding:10px;">
+                    <div id="shelter-list" class="shelters">
+                        <p id="shelter-placeholder">
                             Please select a <b>Country</b> and <b>City</b> above to see available shelters.
                         </p>
                     </div>
                 </div>
 
-                <div class="search-pets-item" style="flex-basis:100%;text-align:center;">
+                <div class="search-pets-item">
                     <button type="submit" class="search-button">Send Surrender Request</button>
                 </div>
             </form>
@@ -111,7 +109,7 @@
                 const city = this.value;
 
                 if (country && city) {
-                    shelterList.innerHTML = '<p style="text-align:center;">Loading shelters...</p>';
+                    shelterList.innerHTML = '<p>Loading shelters...</p>';
 
                     fetch(`../includes/get_shelters.php?country=${encodeURIComponent(country)}&city=${encodeURIComponent(city)}`)
                         .then(response => response.text())
@@ -120,15 +118,15 @@
                         })
                         .catch(error => {
                             console.error('Error:', error);
-                            shelterList.innerHTML = '<p style="color:red;">Error loading shelters.</p>';
+                            shelterList.innerHTML = '<p>Error loading shelters.</p>';
                         });
                 } else {
-                    shelterList.innerHTML = '<p style="color:#666; font-style:italic; text-align:center; padding:10px;">Please select a Country and City above to see available shelters.</p>';
+                    shelterList.innerHTML = '<p>Please select a Country and City above to see available shelters.</p>';
                 }
             });
 
             countrySelect.addEventListener('change', function () {
-                shelterList.innerHTML = '<p style="color:#666; font-style:italic; text-align:center; padding:10px;">Please select a City.</p>';
+                shelterList.innerHTML = '<p>Please select a City.</p>';
             });
         });
     </script>

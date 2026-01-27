@@ -13,14 +13,14 @@ if (isset($_GET['country']) && isset($_GET['city'])) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo '<label class="shelter-option" style="display:block; margin-bottom:5px; cursor:pointer;">
+            echo '<label class="shelter-option">
                     <input type="radio" name="shelter_id" value="' . $row["id"] . '" required> 
                     <b>' . htmlspecialchars($row["shelter_name"]) . '</b> 
-                    <span style="font-size:0.9em; color:#666;">(' . htmlspecialchars($row["address"]) . ')</span>
+                    <span>(' . htmlspecialchars($row["address"]) . ')</span>
                   </label>';
         }
     } else {
-        echo '<p style="color:red;">No shelters found in this location. Please try another city.</p>';
+        echo '<p>No shelters found in this location. Please try another city.</p>';
     }
     $stmt->close();
 }

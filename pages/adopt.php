@@ -126,9 +126,9 @@
                 include '../includes/db_connect.php';
 
                 if (empty($_GET['country']) || empty($_GET['city'])) {
-                    echo '<div style="grid-column: 1/-1; text-align:center; padding:40px; background:#fff; border-radius:10px; border:1px solid #ddd;">
-                            <h3 style="color:#e58e26;">Select Your Location</h3>
-                            <p style="color:#666;">Please select a <b>Country</b> and <b>City</b> above to see available pets near you.</p>
+                    echo '<div class="no-pets-found">
+                            <h3>Select Your Location</h3>
+                            <p>Please select a <b>Country</b> and <b>City</b> above to see available pets near you.</p>
                           </div>';
                 } else {
 
@@ -192,12 +192,12 @@
                                         <p id="pet-location">' . $row["city"] . ', ' . $row["country"] . '</p>
                                         <p id="pet-vaccine-status">' . $vaxStatus . '</p>
                                     </div>
-                                    <a href="request_adoption.php?pet_id=' . $row["id"] . '" class="btn" style="width:100%; display:block; text-align:center; margin-top:10px; background:#e58e26; color:white; padding:8px; border-radius:5px; text-decoration:none;">Adopt Me</a>
+                                    <a href="request_adoption.php?pet_id=' . $row["id"] . '" class="btn-adopt">Adopt Me</a>
                                 </div>
                             </div>';
                         }
                     } else {
-                        echo '<p style="grid-column: 1/-1; text-align:center; padding:20px;">No pets found in this area matching your criteria.</p>';
+                        echo '<p class="no-pets-found">No pets found in this area matching your criteria.</p>';
                     }
                 }
                 ?>

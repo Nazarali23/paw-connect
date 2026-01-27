@@ -50,7 +50,7 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                resultsDiv.innerHTML = '<p style="text-align:center;">Searching...</p>';
+                resultsDiv.innerHTML = '<p>Searching...</p>';
 
                 const formData = new FormData(form);
 

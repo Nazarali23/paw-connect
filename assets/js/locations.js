@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             })
             .catch(error => {
-                console.error('API Hatası:', error);
+                console.error('API Error:', error);
                 countrySelect.innerHTML = '<option value="">Error loading data</option>';
             });
 
